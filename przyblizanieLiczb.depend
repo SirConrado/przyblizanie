@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1487925717 source:c:\users\konrad\documents\programy\przyblizanieliczb\main.cpp
+	<iostream>
+	<string>
+	<cstdlib>
+	<math.h>
+	<sstream>
+
