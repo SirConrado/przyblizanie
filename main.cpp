@@ -238,13 +238,55 @@ przyblizanie & przyblizanie::przybliz(){
     (*this).zlaczCyfryPoPrzecinku();
     (*this).przeksztalcNaWynik();
 }
+class menu{
+    int menu1,wyswietlMenu;
+public:
+    menu(){
+    menu1 = -1;
+    wyswietlMenu = 1;
+    }
+    void wyswietlMenu1(){
+    cout << "Witaj w programie przyblizanie liczby. Wybierz co chcesz zrobic: " << endl;
+    cout << "1 - przybliz liczbe" << endl;
+    cout << "0 - wyjscie z programu" << endl;
+    //cout << "11 - pierwiastkowanie" << endl;
+    }
+    int getMenu1(){
+        return menu1;
+    }
+    int getWyswietlMenu(){
+        return wyswietlMenu;
+    }
+    void setMenu1(int m){
+        menu1 = m;
+    }
+    void setWyswietlMenu(int wM){
+        wyswietlMenu = wM;
+    }
+};
 int main()
 {
-    string n = "1.123459";
-    int l = 3;
-    przyblizanie p1(n,l);
-    p1.przybliz();
-    p1.wypisz();
-
+     menu m;
+     string n;
+     int l, m1;
+      while(m.getMenu1() != 0){
+        m.wyswietlMenu1();
+        cin >> m1;
+         if(m1 == 1){
+            system("CLS");
+            cout << "Przyblizanie liczb:" << endl;
+            cout << "Podaj liczbe do przyblizenia: ";
+            cin >> n;
+            cout << "Podaj miejsce do ktorego chcesz przyblizyc: ";
+            cin >> l;
+            przyblizanie p1(n,l);
+            p1.przybliz();
+            p1.wypisz();
+         }
+          else if(m1 == 0)
+            break;
+         else
+            cout << "Bledna liczba." << endl;
+      }
     return 0;
 }
